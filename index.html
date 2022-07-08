@@ -107,11 +107,32 @@
         clear: both;
         display: table;
     }
+    
+      #spoiler {
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(155, 155, 155, 0.7);
+        z-index: 100;
+        position: absolute;
+        top: 0;
+    }
+    
+    #btn {
+        z-index: 200;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        transition: all .5s;
+    }
 </style>
 
 </head>
 
 <body>
+    
+    <audio style="display: none;" src="sadly.mp3" id="myAudio" controls loop 873y>
+
+    </audio>    
 
     <div class="clearfix container images">
         <img class="img1" src="1.jpg" alt="">
@@ -128,6 +149,21 @@
     <h1 id="btm" class="animate-charcter"> يسألون عن سهر الليال 🥦فقلت انها من اجل اميرا*هل هى اختك ام صديقا 🥦بل كلاهما معا فهى منى قريبا🥦 فماذا تعنى لك؟🥦فقلت تعنى لى الكثيرا🥦وانى لها صديقا وهى لى عزيزا🥦افرايت اهذا القمر زمانه 🥦 افهو من كان لى جليسا 🥦حفظها اللة لى 🥦 وكان اللة لها حفيظا
         🥦واعان صديقها عليها 🥦ورفعها مكان عظيما 🥦 كل عام وانتى بخير 🥦 رزقك اللة عيدآ كريما 🥦🥦🥦</h1>
 
+    
+    <div id="spoiler" onclick="startAudio()">
+        <button id="btn" onclick="startAudio()">أنقر للبدء</button>
+
+
+
+        <script>
+            function startAudio() {
+                document.body.style.overflowY = "scroll"
+                document.getElementById('btn').style.display = "none"
+                document.getElementById('spoiler').style.display = "none"
+                const audio = document.getElementById('myAudio')
+                audio.play()
+            }
+        </script>
 </body>
 
 </html>
